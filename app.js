@@ -3,7 +3,7 @@ var http = require('http');
 var bodyParser = require('body-parser');
 var routes = require('./routes/index');
 var users = require('./routes/users');
-var beforeRequest = require('./middlewares/before-request');
+//var beforeRequest = require('./middlewares/before-request');
 var notFoundHandler = require('./middlewares/not-found');
 var errorHandler = require('./middlewares/error-handler');
 
@@ -14,7 +14,7 @@ app.use(bodyParser.urlencoded({
     extended: false
 }));
 
-app.use(beforeRequest());
+//app.use(beforeRequest());
 app.use('/', routes);
 app.use('/users', users);
 
@@ -23,7 +23,7 @@ app.use(notFoundHandler());
 app.use(errorHandler());
 
 
-var server = app.listen(3000, function() {
+var server = app.listen(4001, function() {
     var host = server.address().address;
     var port = server.address().port;
     console.log('app listening at http://%s:%s', host, port);
