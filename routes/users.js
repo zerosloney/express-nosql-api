@@ -17,5 +17,15 @@ router.get('/', function(req, res, next) {
     });
 });
 
+router.get('/one', function(req, res, next) {
+    pool.query({
+        sql: 'SELECT * from team where Id= ?',
+        timeout: 40000, // 40s 
+        values: ['59b49f54-40f2-40f4-bf88-ed348b13e085']
+    }, function(err, rows, fields) {
+        if (err) throw err;
+        res.json({ error: '0', user: { id: 'xxx-02', name: 'xxx-name02' }, extend: rows });
+    });
+});
 
 module.exports = router;
