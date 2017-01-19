@@ -4,10 +4,8 @@
     "private": true,
     "dependencies": {
         "body-parser": "~1.15.1",
-        "couchbase": "^2.2.2",
         "express": "~4.13.4",
         "jsonwebtoken": "^7.1.9",
-        "node-fetch": "^1.6.3",
         "mysql": "^2.12.0"
     }
 }
